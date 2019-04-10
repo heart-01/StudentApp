@@ -43,7 +43,7 @@ export class HomePage {
             })
           });
      
-        db.executeSql('CREATE TABLE IF NOT EXISTS student (IDstudent INTEGER PRIMARY KEY, name TEXT, tel TEXT, address TEXT, classStudy TEXT, image BLOB)',[]) 
+        db.executeSql('CREATE TABLE IF NOT EXISTS student (IDstudent INTEGER PRIMARY KEY, IDroom INTEGER, name TEXT, tel TEXT, address TEXT, image BLOB)',[]) 
           .then(res=>{console.log('Executed SQL')})
           .catch(e=>{  //SQL เกิด Error ให้ตกมาอยู่ที่ catch แล้วให้แสดง popup แบบ toast
             console.log(e);
@@ -118,7 +118,6 @@ export class HomePage {
         console.log(toast);
       })
     });
-
   }
 
 

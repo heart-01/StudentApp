@@ -18,6 +18,7 @@ import { EditstudentPage } from './../pages/editstudent/editstudent';
 import { AddstudenPage } from './../pages/addstuden/addstuden';
 import { AddroomPage } from './../pages/addroom/addroom';
 import { StudentPage } from './../pages/student/student';
+import { DetailstudentPage } from './../pages/detailstudent/detailstudent';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { StudentPage } from './../pages/student/student';
     AddstudenPage,
     EditroomPage,
     EditstudentPage,
-    StudentPage
+    StudentPage,
+    DetailstudentPage
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,8 @@ import { StudentPage } from './../pages/student/student';
     AddstudenPage,
     EditroomPage,
     EditstudentPage,
-    StudentPage
+    StudentPage,
+    DetailstudentPage
   ],
   providers: [
     StatusBar,

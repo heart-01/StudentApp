@@ -8,7 +8,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AddstudenPage {
 
-  data = { IDstuden:"", name:"", tel:"", address:"", classStudy:"" };
+  data = { IDstuden:"", name:"", tel:"", address:"" };
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
