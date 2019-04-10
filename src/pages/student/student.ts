@@ -3,12 +3,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-addstuden',
-  templateUrl: 'addstuden.html',
+  selector: 'page-student',
+  templateUrl: 'student.html',
 })
-export class AddstudenPage {
-
-  data = { IDstuden:"", name:"", tel:"", address:"", classStudy:"" };
+export class StudentPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

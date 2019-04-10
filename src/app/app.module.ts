@@ -1,5 +1,3 @@
-import { AddstudenPage } from './../pages/addstuden/addstuden';
-import { AddroomPage } from './../pages/addroom/addroom';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -15,6 +13,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { SQLite } from '@ionic-native/sqlite';
 import { Toast } from '@ionic-native/toast';
+import { EditroomPage } from '../pages/editroom/editroom';
+import { EditstudentPage } from './../pages/editstudent/editstudent';
+import { AddstudenPage } from './../pages/addstuden/addstuden';
+import { AddroomPage } from './../pages/addroom/addroom';
+import { StudentPage } from './../pages/student/student';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { Toast } from '@ionic-native/toast';
     HomePage,
     TabsPage,
     AddroomPage,
-    AddstudenPage
+    AddstudenPage,
+    EditroomPage,
+    EditstudentPage,
+    StudentPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +44,10 @@ import { Toast } from '@ionic-native/toast';
     HomePage,
     TabsPage,
     AddroomPage,
-    AddstudenPage
+    AddstudenPage,
+    EditroomPage,
+    EditstudentPage,
+    StudentPage
   ],
   providers: [
     StatusBar,
