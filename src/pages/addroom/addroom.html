@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>เพิ่มรายการห้อง</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <form (ngSubmit)="saveData()">
+      <ion-item>
+        <ion-label floating>ใส่ชื่อห้องเรียน</ion-label>
+        <ion-input type="text" name="nameRoom" [(ngModel)]="nameRoom" required ></ion-input>
+      </ion-item>
+      <br/>
+      <button ion-button type="submit" block>บันทึกข้อมูล</button>
+    </form>
+</ion-content>

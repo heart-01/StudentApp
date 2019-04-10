@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>เพิ่มรายชื่อนักศึกษา</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <form (ngSubmit)="saveData()">
+
+      <ion-item>
+        <ion-label floating>รหัสนักศึกษา</ion-label>
+        <ion-input type="number" name="idStuden" [(ngModel)]="data.idStuden" required ></ion-input>
+      </ion-item>
+
+      <ion-item>
+         <ion-label floating>ชื่อ-สกุล นักศึกษา</ion-label>
+         <ion-input type="text" name="name" [(ngModel)]="data.name" required ></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>เบอร์โทรศัพท์</ion-label>
+          <ion-input type="number" name="tel" [(ngModel)]="data.tel" required ></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>ที่อยู่</ion-label>
+          <ion-input type="text" name="address" [(ngModel)]="data.address" required ></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>ระดับชั้น</ion-label>
+          <ion-input type="text" name="classStudy" [(ngModel)]="data.classStudy" required ></ion-input>
+      </ion-item> 
+  
+      <br/>
+      <button ion-button type="submit" block>บันทึกข้อมูล</button>
+    </form>
+</ion-content>

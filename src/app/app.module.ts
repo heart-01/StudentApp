@@ -1,3 +1,5 @@
+import { AddstudenPage } from './../pages/addstuden/addstuden';
+import { AddroomPage } from './../pages/addroom/addroom';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -20,7 +22,9 @@ import { Toast } from '@ionic-native/toast';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    AddroomPage,
+    AddstudenPage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,9 @@ import { Toast } from '@ionic-native/toast';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    AddroomPage,
+    AddstudenPage
   ],
   providers: [
     StatusBar,
