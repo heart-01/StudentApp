@@ -47,7 +47,7 @@ export class StudentPage {
               IDstudent: res.rows.item(i).IDstudent, //สร้าง ตัวแปร IDstudent แล้วเก็บค่าของแถว IDstudent
               name: res.rows.item(i).name,
               tel: res.rows.item(i).tel,
-              address: res.rows.item(i).address,
+              address: res.rows.item(i).address
             });
           }
         })

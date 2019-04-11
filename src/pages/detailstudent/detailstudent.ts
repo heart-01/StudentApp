@@ -11,16 +11,15 @@ import { Toast } from '@ionic-native/toast';
 })
 export class DetailstudentPage {
 
-  IDstudent:any;
-  detailstudent:any[];
+  detailstudent={ IDstudent:0, name:"", tel:"", address:""};
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public sqlite: SQLite, public toast: Toast) {
 
-    this.IDstudent=navParams.get('IDstudent') //รับข้อมูล IDstudent ที่ส่งเข้ามา
+    this.getData=navParams.get('IDstudent') //รับข้อมูล IDstudent ที่ส่งเข้ามา
 
   }
 
-  getData(){
+  getData(IDstudent){
     this.sqlite.create(
       {
         name: 'ionicdb.db',
@@ -29,18 +28,14 @@ export class DetailstudentPage {
     )
     .then(
       (db: SQLiteObject)=>{
-        var IDstudent = this.IDstudent;
-        db.executeSql('SELECT * FROM student WHERE IDstudent=?',[IDstudent])
+        db.executeSql("SELECT * FROM student WHERE IDstudent=?",[IDstudent])
         .then(res=>{ // res เป็นผลที่ได้หลังจากการ query
-          this.detailstudent=[];
-          for(var i=0;i<res.rows.length;i++){  //res.rows คือจำนวนแถวที่ได้จากการ executeSql เริ่มต้นที่ 1
-            this.detailstudent.push({ //push เป็นการนำข้อมูลใส่ในตัวแปร dataStudent
-              IDstudent: res.rows.item(i).IDstudent, //สร้าง ตัวแปร IDstudent แล้วเก็บค่าของแถว IDstudent
-              name: res.rows.item(i).name,
-              tel: res.rows.item(i).tel,
-              address: res.rows.item(i).address,
-            });
-          }
+          if(res.rows.length>0){
+            this.detailstudent.IDstudent=res.rows.item(0).IDstudent;
+            this.detailstudent.name=res.rows.item(0).name;
+            this.detailstudent.tel=res.rows.item(0).tel;
+            this.detailstudent.address=res.rows.item(0).address;
+          }         
         })
         .catch(e=>{  //SQL เกิด Error ให้ตกมาอยู่ที่ catch แล้วให้แสดง popup แบบ toast
           console.log(e);
