@@ -21,6 +21,14 @@ export class StudentPage {
     this.IDroom=navParams.get('IDroom') //รับข้อมูล IDroom ที่ส่งเข้ามา
   }
 
+  ionViewDidLoad(){
+    this.getData();
+  }
+
+  ionViewWillEnter(){
+    this.getData();
+  }
+
   getData(){
     this.sqlite.create(
       {
@@ -63,7 +71,8 @@ export class StudentPage {
   }
 
   addData(){
-    this.navCtrl.push(AddstudenPage);
+    var IDroom = this.IDroom;
+    this.navCtrl.push(AddstudenPage,{ IDroom : IDroom});
   }
 
   editData(IDstudent){

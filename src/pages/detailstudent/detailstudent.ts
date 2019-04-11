@@ -30,7 +30,7 @@ export class DetailstudentPage {
     .then(
       (db: SQLiteObject)=>{
         var IDstudent = this.IDstudent;
-        db.executeSql('SELECT * FROM student WHERE IDstudent=? ORDER BY IDstudent DESC',[IDstudent])
+        db.executeSql('SELECT * FROM student WHERE IDstudent=?',[IDstudent])
         .then(res=>{ // res เป็นผลที่ได้หลังจากการ query
           this.detailstudent=[];
           for(var i=0;i<res.rows.length;i++){  //res.rows คือจำนวนแถวที่ได้จากการ executeSql เริ่มต้นที่ 1

@@ -1,6 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>รายชื่อนักศึกษา</ion-title>
+    <ion-buttons end>
     <button ion-button icon-only (click)="addData()">
         <ion-icon name="add-circle"></ion-icon>
       </button>
@@ -20,7 +21,7 @@
         <button ion-button clear item-end  (click)="viewDetail(student.IDstudent)" >View</button>
       </ion-item>
 
-      <ion-item-options side="left"> <!-- เมื่อเราสไลด์ไปทางขวา -->
+      <ion-item-options side="right"> <!-- เมื่อเราสไลด์ไปทางขวา -->
         <button ion-button color="primary" (click)="editData(student.IDstudent)">
           <ion-icon name="paper"></ion-icon>
         </button>

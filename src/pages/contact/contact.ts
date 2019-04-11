@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { AddstudenPage } from './../addstuden/addstuden';
+import { SelectroomPage } from './../selectroom/selectroom';
 import { AddroomPage } from './../addroom/addroom';
 
 @Component({
@@ -19,7 +19,7 @@ export class ContactPage {
   }
 
   addStuden(){
-    this.navCtrl.push(AddstudenPage);
+    this.navCtrl.push(SelectroomPage);
   }
 
 }

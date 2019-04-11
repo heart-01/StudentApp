@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>เลือกห้องที่ต้องการเพิ่มข้อมูล</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <h3>รายชื่อห้อง</h3>
+    <ion-list>
+        <ion-item nopadding *ngFor="let room of dataRoom; let i=index" >
+          <p>
+            {{room.nameRoom}}
+          </p>
+          <button ion-button clear item-end  (click)="addData(room.IDroom)" >
+            <ion-icon name="add-circle"></ion-icon>
+          </button>          
+        </ion-item>
+    </ion-list>
+    
+</ion-content>

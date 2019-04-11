@@ -19,6 +19,7 @@ import { AddstudenPage } from './../pages/addstuden/addstuden';
 import { AddroomPage } from './../pages/addroom/addroom';
 import { StudentPage } from './../pages/student/student';
 import { DetailstudentPage } from './../pages/detailstudent/detailstudent';
+import { SelectroomPage } from './../pages/selectroom/selectroom';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { DetailstudentPage } from './../pages/detailstudent/detailstudent';
     EditroomPage,
     EditstudentPage,
     StudentPage,
-    DetailstudentPage
+    DetailstudentPage,
+    SelectroomPage
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,8 @@ import { DetailstudentPage } from './../pages/detailstudent/detailstudent';
     EditroomPage,
     EditstudentPage,
     StudentPage,
-    DetailstudentPage
+    DetailstudentPage,
+    SelectroomPage
   ],
   providers: [
     StatusBar,
