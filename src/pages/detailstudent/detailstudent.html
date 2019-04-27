@@ -12,9 +12,14 @@
       Name: {{detailstudent.name}} <br>
     </ion-card-header>
     <ion-card-content>
-      <p>Tel: {{detailstudent.tel}}</p>
+      <p>Tel: <a href="tel:{{detailstudent.tel}}">{{detailstudent.tel}}</a></p>
       <p>Address: {{detailstudent.address}}</p>
     </ion-card-content>
   </ion-card>
+
+  <!--<ion-button (click)="openCamera()">
+    <ion-icon name="camera"></ion-icon>
+    <ion-label>Photo</ion-label>
+  </ion-button>-->
 
 </ion-content>

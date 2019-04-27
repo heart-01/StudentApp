@@ -80,7 +80,7 @@ export class HomePage {
   }
 
   addData(){
-    this.navCtrl.push(AddroomPage);
+    this.navCtrl.push(AddroomPage,{ IDpage : 1 });
   }
 
   editData(IDroom){

@@ -1,9 +1,9 @@
+import { StudentPage } from './../student/student';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 import { Toast } from '@ionic-native/toast';
-import { HomePage } from './../home/home';
 
 @IonicPage()
 @Component({
@@ -12,6 +12,7 @@ import { HomePage } from './../home/home';
 })
 export class EditstudentPage {
 
+  IDroom=0;
   data={ IDstudent:0, name:"", tel:"", address:"" };
 
   constructor(public navCtrl: NavController, public navParams: NavParams,  private sqlite: SQLite, private toast: Toast) {
@@ -31,6 +32,7 @@ export class EditstudentPage {
                this.data.name=res.rows.item(0).name;
                this.data.tel=res.rows.item(0).tel;
                this.data.address=res.rows.item(0).address;
+               this.IDroom=res.rows.item(0).IDroom;
             }
           }
          )
@@ -77,8 +79,8 @@ export class EditstudentPage {
               .subscribe(
                 toast=>{
                   console.log(toast);
-                  this.navCtrl.setRoot(HomePage);
-                  this.navCtrl.popToRoot(); //ใช้แสดงหน้าแรก popToRoot หน้าที่เซ็ตเอาไว้เป็น root page
+                  let IDroom = this.IDroom;
+                  this.navCtrl.setRoot(StudentPage,{ IDroom : IDroom });
                 }
               );
             })

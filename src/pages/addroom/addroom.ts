@@ -1,3 +1,4 @@
+import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -13,8 +14,10 @@ import { ContactPage } from './../contact/contact';
 export class AddroomPage {
 
   nameRoom:any;
+  IDpage=0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public sqlite : SQLite, public toast : Toast) {
+    this.IDpage=navParams.get('IDpage')
   }
 
   saveData(){
@@ -31,8 +34,12 @@ export class AddroomPage {
               this.toast.show('Data Saved','3000','center') //แสดง Data Saved popup toast 3 วินาที
                 .subscribe(toast=>{ //subscribe คือ หลังจากแสดงผล toast แล้วให้ทำอะไรต่อ
                   console.log(toast); //แสดงข้อมูล toast
-                  this.navCtrl.setRoot(ContactPage);
-                  this.navCtrl.popToRoot();
+                  var IDpage = this.IDpage;
+                  if(IDpage==1){
+                    this.navCtrl.popTo(HomePage);
+                  }else if(IDpage==0){
+                    this.navCtrl.popTo(ContactPage); // popTo คือการ pop หน้าเพจออกจนกว่าจะมาเจอหน้าที่อยู่ในวงเล็บ ถ้าไม่เจอหน้าที่อยู่ในวงเล็บจะกลับไปหน้า setRoot
+                  }
                 });
             }
           )

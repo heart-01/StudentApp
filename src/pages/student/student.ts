@@ -16,6 +16,7 @@ export class StudentPage {
 
   IDroom:any;
   dataStudent:any[];
+  IDpage=1;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public sqlite: SQLite, public toast: Toast) {
     this.IDroom=navParams.get('IDroom') //รับข้อมูล IDroom ที่ส่งเข้ามา
@@ -72,7 +73,8 @@ export class StudentPage {
 
   addData(){
     var IDroom = this.IDroom;
-    this.navCtrl.push(AddstudenPage,{ IDroom : IDroom});
+    var IDpage = this.IDpage;
+    this.navCtrl.push(AddstudenPage,{ IDroom : IDroom, IDpage : IDpage });
   }
 
   editData(IDstudent){

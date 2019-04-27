@@ -74,7 +74,6 @@ export class EditroomPage {
                 toast=>{
                   console.log(toast);
                   this.navCtrl.setRoot(HomePage);
-                  this.navCtrl.popToRoot(); //ใช้แสดงหน้าแรก popToRoot หน้าที่เซ็ตเอาไว้เป็น root page
                 }
               );
             })

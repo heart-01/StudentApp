@@ -4,6 +4,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SQLite,SQLiteObject } from '@ionic-native/sqlite';
 import { Toast } from '@ionic-native/toast';
 
+import { Camera, CameraOptions } from '@ionic-native/camera';
+
 @IonicPage()
 @Component({
   selector: 'page-detailstudent',
@@ -13,10 +15,16 @@ export class DetailstudentPage {
 
   detailstudent={ IDstudent:0, name:"", tel:"", address:""};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public sqlite: SQLite, public toast: Toast) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public sqlite: SQLite, public toast: Toast,
+    private camera: Camera) {
 
-    this.getData=navParams.get('IDstudent') //รับข้อมูล IDstudent ที่ส่งเข้ามา
+    //this.getData=navParams.get('IDstudent'); //รับข้อมูล IDstudent ที่ส่งเข้ามา
+    this.getData(navParams.get('IDstudent'));
 
+  }
+
+  ionViewDidLoad(){
+    //this.getData();
   }
 
   getData(IDstudent){
@@ -56,6 +64,21 @@ export class DetailstudentPage {
     });
   }
 
-
+ /* openCam(){
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.FILE_URI,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+    
+    this.camera.getPicture(options).then((imageData) => {
+     // imageData is either a base64 encoded string or a file URI
+     // If it's base64 (DATA_URL):
+     let base64Image = 'data:image/jpeg;base64,' + imageData;
+    }, (err) => {
+     // Handle error
+    });
+  }*/
 
 }

@@ -21,6 +21,8 @@ import { StudentPage } from './../pages/student/student';
 import { DetailstudentPage } from './../pages/detailstudent/detailstudent';
 import { SelectroomPage } from './../pages/selectroom/selectroom';
 
+import { Camera } from '@ionic-native/camera';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -60,7 +62,8 @@ import { SelectroomPage } from './../pages/selectroom/selectroom';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     SQLite,
-    Toast
+    Toast,
+    Camera
   ]
 })
 export class AppModule {}
